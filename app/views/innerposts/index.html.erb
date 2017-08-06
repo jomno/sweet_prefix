@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Innerposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Post</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @innerposts.each do |innerpost| %>
+      <tr>
+        <td><%= innerpost.title %></td>
+        <td><%= innerpost.content %></td>
+        <td><%= innerpost.post %></td>
+        <td><%= link_to 'Show', innerpost %></td>
+        <td><%= link_to 'Edit', edit_innerpost_path(innerpost) %></td>
+        <td><%= link_to 'Destroy', innerpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Innerpost', new_innerpost_path %>
